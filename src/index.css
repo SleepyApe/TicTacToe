@@ -1,0 +1,85 @@
+:root {
+    --square-size: 100px;
+    --XO-size: calc(var(--square-size) * .9);
+}
+
+body {
+    font: 14px "Century Gothic", Futura, sans-serif;
+    margin: 0;
+}
+
+.screen {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: auto auto;
+    padding: 1rem;
+}
+
+/* The Board */
+/* ------------------------------------------------------------------------------------------------------------------------ */
+
+.board {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+    background: darkblue;
+}
+
+.square {
+    width: var(--square-size);
+    height: var(--square-size);
+    background: #fff;
+    border: 1px solid black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.square:first-child,
+.square:nth-child(2),
+.square:nth-child(3) {
+    border-top: none;
+}
+
+.square:nth-child(3n + 1) {
+    border-left: none;
+}
+
+.square:nth-child(3n + 3) {
+    border-right: none;
+}
+
+.square:last-child,
+.square:nth-child(7),
+.square:nth-child(8) {
+    border-bottom: none;
+}
+
+/* INFO */
+/* ------------------------------------------------------------------------------------------------------------------------ */
+
+.game-info {
+    padding-top: 10px;
+    margin-left: 20px;
+}
+
+.status {
+    margin-bottom: 10px;
+}
+
+ol, ul {
+    padding-left: 30px;
+}
+
+.kbd-navigation .square:focus {
+    background: #ddd;
+}
